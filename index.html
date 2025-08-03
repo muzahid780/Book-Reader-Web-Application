@@ -2,14 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Book Reader</title>
+    <title>Book Reader Web Application</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>📚 Book Reader</h1>
-    <ul id="book-list">
-      <li><a href="reader.html?book=1">The Great Gatsby</a></li>
-      <li><a href="reader.html?book=2">Moby Dick</a></li>
-    </ul>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('about')">About</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        <li><a href="#" onclick="showSection('reader')">Read Book</a></li>
+      </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="active">
+      <h1>📚 Welcome to Book Reader</h1>
+      <ul id="book-list">
+        <li><button onclick="loadBook(1)">The Great Gatsby</button></li>
+        <li><button onclick="loadBook(2)">Moby Dick</button></li>
+      </ul>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h1>About Book Reader</h1>
+      <p>
+        This is a simple web application built with HTML, CSS, and JavaScript
+        that lets you read books in PDF format right in your browser.
+      </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h1>Contact Us</h1>
+      <p>Email: support@bookreader.com</p>
+      <p>Phone: +123-456-7890</p>
+    </section>
+
+    <!-- Reader Section -->
+    <section id="reader">
+      <h1 id="book-title">Select a Book to Read</h1>
+      <div id="book-viewer">
+        <iframe
+          id="pdf-viewer"
+          width="100%"
+          height="600px"
+          style="border: 1px solid #ccc"
+        ></iframe>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
