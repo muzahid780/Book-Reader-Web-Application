@@ -1,4 +1,4 @@
-// Book data — add as many as you want here
+// Book data
 const books = [
   {
     id: 1,
@@ -27,7 +27,7 @@ const books = [
   },
 ];
 
-// ✅ Show only the selected section (but ignore the banner)
+//  Show only the selected section (but ignore the banner)
 function showSection(id) {
   const sections = document.querySelectorAll("section");
 
@@ -43,7 +43,7 @@ function showSection(id) {
   });
 }
 
-// ✅ Render the book list dynamically
+// Render the book list dynamically
 function renderBookList(filter = "") {
   const list = document.getElementById("book-list");
   list.innerHTML = ""; // clear existing
@@ -68,7 +68,7 @@ function renderBookList(filter = "") {
   });
 }
 
-// ✅ Load PDF into iframe
+//  Load PDF into iframe
 function loadBook(bookId) {
   showSection("reader");
 
@@ -85,13 +85,13 @@ function loadBook(bookId) {
   }
 }
 
-// ✅ Filter books on search input
+//  Filter books on search input
 function filterBooks() {
   const input = document.getElementById("search-input");
   renderBookList(input.value);
 }
 
-// ✅ Initial setup on page load
+//  Initial setup on page load
 document.addEventListener("DOMContentLoaded", () => {
   renderBookList();
   showSection("home");
