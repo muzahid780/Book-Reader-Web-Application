@@ -1,13 +1,44 @@
-body {
-  font-family: "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
+/*scales font better*/
+html {
+  font-size: 16px;
 }
 
+@media (max-width: 768px) {
+  /*for responsive*/
+  html {
+    font-size: 15px;
+  }
+}
+
+#banner {
+  background: linear-gradient(90deg, #0077cc, #005fa3);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+#banner h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+}
+
+#banner p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+/* Search bar styles */
 nav {
   background-color: #333;
   padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
 }
 
 nav ul {
@@ -16,6 +47,7 @@ nav ul {
   margin: 0;
   padding: 0;
   gap: 20px;
+  flex-grow: 1;
 }
 
 nav ul li a {
@@ -25,18 +57,23 @@ nav ul li a {
   cursor: pointer;
 }
 
-section {
-  display: none;
-  padding: 20px;
+#search-input {
+  padding: 6px 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  width: 200px;
+  max-width: 100%;
 }
 
-section.active {
-  display: block;
-}
-
+/* Book list styles */
 #book-list {
   list-style: none;
   padding: 0;
+}
+#home {
+  color: green;
+  text-align: center;
 }
 
 #book-list li {
@@ -49,12 +86,71 @@ section.active {
   color: #fff;
   border: none;
   cursor: pointer;
+  width: 50%;
+  text-align: center;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 #book-list button:hover {
   background-color: #005fa3;
 }
 
-#book-viewer {
-  margin-top: 20px;
+/* ✅ Fix for section visibility */
+section {
+  display: none;
+}
+
+section.active,
+#banner {
+  display: block;
+}
+
+/* ========== MOBILE RESPONSIVE STYLES ========== */
+@media (max-width: 768px) {
+  /* Navbar layout: stack vertically */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  #search-input {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Book buttons take full width */
+  #book-list button {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  #banner h1 {
+    font-size: 1.8rem;
+  }
+
+  #banner p {
+    font-size: 1rem;
+  }
+
+  #home h2 {
+    font-size: 1.5rem;
+  }
 }

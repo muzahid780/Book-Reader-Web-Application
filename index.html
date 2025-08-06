@@ -2,27 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!--for responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Book Reader Web Application</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Banner Section -->
+    <section id="banner">
+      <h1>📚 Welcome to the Ultimate Book Reader!</h1>
+      <p>Discover and read your favorite books online...</p>
+    </section>
+
     <!-- Navigation -->
     <nav>
       <ul>
-        <li><a href="#" onclick="showSection('home')">Home</a></li>
-        <li><a href="#" onclick="showSection('about')">About</a></li>
-        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-        <li><a href="#" onclick="showSection('reader')">Read Book</a></li>
+        <li>
+          <a href="#" onclick="event.preventDefault(); showSection('home')"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="event.preventDefault(); showSection('about')"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="event.preventDefault(); showSection('contact')"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="event.preventDefault(); showSection('reader')"
+            >Read Book</a
+          >
+        </li>
       </ul>
+
+      <!-- Search Bar -->
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search books..."
+        oninput="filterBooks()"
+        aria-label="Search books"
+      />
     </nav>
 
     <!-- Home Section -->
     <section id="home" class="active">
-      <h1>📚 Welcome to Book Reader</h1>
-      <ul id="book-list">
-        <li><button onclick="loadBook(1)">The Great Gatsby</button></li>
-        <li><button onclick="loadBook(2)">Moby Dick</button></li>
-      </ul>
+      <h2>Available Books</h2>
+      <ul id="book-list"></ul>
+      <!-- will be populated dynamically -->
     </section>
 
     <!-- About Section -->
