@@ -1,21 +1,28 @@
-/*scales font better*/
+/* Base font size */
 html {
   font-size: 16px;
 }
 
 @media (max-width: 768px) {
-  /*for responsive*/
   html {
     font-size: 15px;
   }
 }
 
+/* Reset and global font */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner Section */
 #banner {
   background: linear-gradient(90deg, #0077cc, #005fa3);
   color: white;
   text-align: center;
-  padding: 40px 20px;
-  font-family: "Segoe UI", sans-serif;
+  padding: 30px 20px;
+  margin-top: 7px;
   margin-bottom: 20px;
   border-radius: 4px;
 }
@@ -31,7 +38,7 @@ html {
   opacity: 0.85;
 }
 
-/* Search bar styles */
+/* Navigation */
 nav {
   background-color: #333;
   padding: 10px 20px;
@@ -57,58 +64,117 @@ nav ul li a {
   cursor: pointer;
 }
 
+/* Search Input */
 #search-input {
   padding: 6px 10px;
   font-size: 1rem;
   border-radius: 4px;
   border: none;
-  width: 200px;
+  width: 120px;
   max-width: 100%;
 }
 
-/* Book list styles */
-#book-list {
-  list-style: none;
-  padding: 0;
-}
-#home {
-  color: green;
-  text-align: center;
-}
-
-#book-list li {
-  margin-bottom: 10px;
-}
-
-#book-list button {
-  padding: 10px 15px;
-  background-color: #0077cc;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  width: 50%;
-  text-align: center;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-#book-list button:hover {
-  background-color: #005fa3;
-}
-
-/* ✅ Fix for section visibility */
+/* Section visibility */
+/* Hide all sections by default */
 section {
   display: none;
 }
 
+/* Show only the active one */
 section.active,
 #banner {
   display: block;
 }
 
-/* ========== MOBILE RESPONSIVE STYLES ========== */
+/* Home Section */
+#home {
+  color: green;
+  text-align: center;
+}
+
+/* Common List Styles */
+#book-list,
+#cart-list,
+#admin-book-list {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  max-width: 600px;
+}
+
+#book-list li,
+#cart-list li,
+#admin-book-list li {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Common Button Styles */
+#book-list button,
+#cart-list button,
+#admin-book-list button {
+  margin-top: 5px;
+  padding: 10px 15px;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  width: 90%;
+  max-width: 400px;
+}
+
+#book-list button:hover,
+#cart-list button:hover,
+#admin-book-list button:hover {
+  background-color: #005fa3;
+}
+
+/* Admin Panel Centering */
+#admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Admin Form */
+#admin form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+#admin input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#admin button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+#cart {
+  text-align: center;
+  color: green;
+}
+/* Responsive Styles */
 @media (max-width: 768px) {
-  /* Navbar layout: stack vertically */
   nav {
     flex-direction: column;
     align-items: flex-start;
@@ -118,10 +184,6 @@ section.active,
   nav ul {
     flex-direction: column;
     gap: 10px;
-    width: 100%;
-  }
-
-  nav ul li {
     width: 100%;
   }
 
@@ -136,7 +198,6 @@ section.active,
     margin-top: 10px;
   }
 
-  /* Book buttons take full width */
   #book-list button {
     width: 90%;
     font-size: 1rem;
@@ -153,4 +214,59 @@ section.active,
   #home h2 {
     font-size: 1.5rem;
   }
+
+  #nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* LOGIN SECTION STYLING */
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+#login h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#login-form input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+#login-form button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#login-form button:hover {
+  background-color: #0056b3;
 }

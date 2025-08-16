@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!--for responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Book Reader Web Application</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -38,31 +36,40 @@
             >Read Book</a
           >
         </li>
+        <li>
+          <a href="#" onclick="event.preventDefault(); showSection('admin')"
+            >Admin</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="event.preventDefault(); showSection('cart')"
+            >Cart</a
+          >
+        </li>
       </ul>
-
-      <!-- Search Bar -->
-      <input
-        type="text"
-        id="search-input"
-        placeholder="Search books..."
-        oninput="filterBooks()"
-        aria-label="Search books"
-      />
+      <div id="nav-right">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search books..."
+          oninput="filterBooks()"
+          aria-label="Search books"
+        />
+        <button id="login-btn" onclick="showSection('login')">Login</button>
+      </div>
     </nav>
 
     <!-- Home Section -->
     <section id="home" class="active">
       <h2>Available Books</h2>
       <ul id="book-list"></ul>
-      <!-- will be populated dynamically -->
     </section>
 
     <!-- About Section -->
     <section id="about">
       <h1>About Book Reader</h1>
       <p>
-        This is a simple web application built with HTML, CSS, and JavaScript
-        that lets you read books in PDF format right in your browser.
+        This web app lets you read books in PDF format right in your browser.
       </p>
     </section>
 
@@ -84,6 +91,41 @@
           style="border: 1px solid #ccc"
         ></iframe>
       </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin">
+      <h1>Admin Panel</h1>
+      <form id="add-book-form">
+        <input type="text" id="new-title" placeholder="Book Title" required />
+        <input
+          type="text"
+          id="new-src"
+          placeholder="PDF URL (books/sampleX.pdf)"
+          required
+        />
+        <button type="submit">Add Book</button>
+      </form>
+      <ul id="admin-book-list"></ul>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart">
+      <h1>Your Book Cart</h1>
+      <p>
+        💰 Wallet Balance: <span id="wallet-balance">5</span> downloads left
+      </p>
+      <ul id="cart-list"></ul>
+    </section>
+
+    <section id="login">
+      <h1>Login</h1>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Submit</button>
+      </form>
+      <p id="login-status" style="color: red; margin-top: 10px"></p>
     </section>
 
     <script src="script.js"></script>
