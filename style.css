@@ -98,8 +98,9 @@ section.active,
 #admin-book-list {
   list-style: none;
   padding: 0;
+  color: blueviolet;
   margin: auto;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 #book-list li,
@@ -118,13 +119,17 @@ section.active,
   margin-top: 5px;
   padding: 10px 15px;
   background-color: #0077cc;
-  color: #fff;
+  color: white;
   border: none;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   width: 90%;
   max-width: 400px;
+}
+#cart-list button {
+  width: 50%;
+  color: red;
 }
 
 #book-list button:hover,
