@@ -18,7 +18,8 @@ body {
 
 /* Banner Section */
 #banner {
-  background: linear-gradient(90deg, #0077cc, #005fa3);
+  background: blueviolet;
+  /*background: linear-gradient(90deg, #0077cc, #005fa3);*/
   color: white;
   text-align: center;
   padding: 30px 20px;
@@ -88,7 +89,7 @@ section.active,
 
 /* Home Section */
 #home {
-  color: green;
+  color: black;
   text-align: center;
 }
 
@@ -118,7 +119,7 @@ section.active,
 #admin-book-list button {
   margin-top: 5px;
   padding: 10px 15px;
-  background-color: #0077cc;
+  background-color: blueviolet;
   color: white;
   border: none;
   cursor: pointer;
@@ -129,7 +130,7 @@ section.active,
 }
 #cart-list button {
   width: 50%;
-  color: red;
+  color: aqua;
 }
 
 #book-list button:hover,
@@ -176,7 +177,7 @@ section.active,
 }
 #cart {
   text-align: center;
-  color: green;
+  color: black;
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -274,4 +275,16 @@ section.active,
 
 #login-form button:hover {
   background-color: #0056b3;
+}
+
+.add-to-cart {
+  background-color: #45a049; /* Change to any color you like */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #45a049;
 }

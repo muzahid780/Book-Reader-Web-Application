@@ -23,21 +23,6 @@ function showSection(id) {
   if (id === "cart") renderCart();
 }
 
-/*function showSection(id) {
-  const sections = document.querySelectorAll("section");
-
-  sections.forEach((section) => {
-    if (section.id === "banner") return;
-    section.classList.remove("active");
-  });
-
-  const target = document.getElementById(id);
-  if (target) target.classList.add("active");
-
-  if (id === "admin") renderAdminBookList();
-  if (id === "cart") renderCart();
-}*/
-
 function renderBookList(filter = "") {
   const list = document.getElementById("book-list");
   list.innerHTML = "";
@@ -60,6 +45,7 @@ function renderBookList(filter = "") {
 
     const cartBtn = document.createElement("button");
     cartBtn.textContent = "📥 Add to Cart";
+    cartBtn.classList.add("add-to-cart");
     cartBtn.onclick = () => addToCart(book);
 
     li.appendChild(readBtn);
