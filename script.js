@@ -183,14 +183,14 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
   const status = document.getElementById("login-status");
 
   // Check credentials
-  if (username === "admin" && password === "1234") {
-    status.style.color = "green";
-    status.textContent = "Login successful!";
+  if (username === "admin@gmail.com" && password === "1234") {
+    status.style.color = "blue";
+    status.textContent = "Login Successful!";
 
     //  Now redirect to admin
     showSection("admin");
   } else {
-    status.style.color = "red";
-    status.textContent = "Invalid credentials.";
+    status.style.color = "blue";
+    status.textContent = "Opps! --> Communicate to Admin..";
   }
 });
